@@ -21,6 +21,6 @@ class Account {
       "name": name,
       "lastName": lastName,
       "balance": balance
-    }
+    };
   }
 }

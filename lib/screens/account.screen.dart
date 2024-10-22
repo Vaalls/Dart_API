@@ -74,13 +74,18 @@ class AccountScreen {
   }
 
   _addExampleAccount() async{
-    Account example = Account(
-      id: "ID2",
-      name: "Beatriz",
-      lastName: "Alencar",
-      balance: 25000
-    );
 
-    await _accountService.addAccount(example);
+    try {
+  Account example = Account(
+    id: "ID2",
+    name: "Beatriz",
+    lastName: "Alencar",
+    balance: 25000
+  );
+  
+  await _accountService.addAccount(example);
+} on Exception catch (e) {
+  print("Ocorreu um problema ao adicionar");
+}
   }
 }

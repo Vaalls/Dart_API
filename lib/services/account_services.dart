@@ -12,7 +12,6 @@ class AccountService {
   String url = "https://api.github.com.br/gists/7c1c19cba87f199ab0cbe3bfcd87f1b0";
 
   Future<List<Account>> getAll() async {
-    try {
   Response response = await get(Uri.parse(url));
   _streamController.add("${DateTime.now()} | Requisição de leitura.");
   
@@ -29,10 +28,6 @@ class AccountService {
   }
   
   return listAccounts;
-} on Exception {
-  print("Se eu capturei a exceção no serviço, será lançada para tela?");
-  return [];
-}
   }
 
   addAccount(Account account) async {

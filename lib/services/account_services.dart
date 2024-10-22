@@ -9,7 +9,7 @@ class AccountService {
   final StreamController<String> _streamController = StreamController<String>();
   Stream<String> get streamInfos => _streamController.stream;
 
-  String url = "https://api.github.com.br/gists/7c1c19cba87f199ab0cbe3bfcd87f1b0";
+  String url = "https://api.github.com/gists/7c1c19cba87f199ab0cbe3bfcd87f1b0";
 
   Future<List<Account>> getAll() async {
     Response response = await get(Uri.parse(url));

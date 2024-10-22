@@ -5,12 +5,15 @@ class Account {
   String name;
   String lastName;
   double balance;
+  String accountType;
 
   Account(
       {required this.id,
       required this.name,
       required this.lastName,
-      required this.balance});
+      required this.balance,
+      required this.accountType
+      });
 
   factory Account.fromMap(Map<String, dynamic> map) {
     return Account(
@@ -20,6 +23,7 @@ class Account {
       balance: (map["balance"] is int)
           ? (map["balance"] as int).toDouble()
           : map["balance"] as double,
+      accountType: map['accountType'] as String
     );
   }
 
@@ -28,7 +32,8 @@ class Account {
       "id": id,
       "name": name,
       "lastName": lastName,
-      "balance": balance
+      "balance": balance,
+      'accountType': accountType
     };
   }
 
@@ -37,19 +42,21 @@ class Account {
     String? name,
     String? lastName,
     double? balance,
+    String? accountType
   }) {
     return Account(
       id: id ?? this.id,
       name: name ?? this.name,
       lastName: lastName ?? this.lastName,
       balance: balance ?? this.balance,
+      accountType: accountType ?? this.accountType
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory Account.fromJson(String source) =>
-      Account.fromMap(json.decode(source) as Map<String, dynamic>);
+    Account.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {

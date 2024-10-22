@@ -1,9 +1,16 @@
+import 'package:dart_assincronismo/models/transaction.dart';
 import 'package:dart_assincronismo/screens/account.screen.dart';
+import 'package:dart_assincronismo/services/transactionService.dart';
 
 void main(){
-  AccountScreen accountScreen = AccountScreen();
-  accountScreen.initializeStream();
-  accountScreen.runChatBot();
+  Transactionservice().makeTransation
+  (idSender: "ID06",
+  idReceiver: "ID04",
+  amount: 100
+  );
+  // AccountScreen accountScreen = AccountScreen();
+  // accountScreen.initializeStream();
+  // accountScreen.runChatBot();
 }
 
 // void main(){

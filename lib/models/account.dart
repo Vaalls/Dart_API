@@ -5,7 +5,10 @@ class Account {
   String name;
   String lastName;
   double balance;
-  String accountType;
+  //Colocamos o '?' para dizer que o objeto pode ser nulo. Pois
+  //Existe informações em nossa base de dados que não contém esse
+  //Atributo
+  String?  accountType;
 
   Account(
       {required this.id,
@@ -22,8 +25,10 @@ class Account {
       lastName: map["lastName"] as String,
       balance: (map["balance"] is int)
           ? (map["balance"] as int).toDouble()
-          : map["balance"] as double,
-      accountType: map['accountType'] as String
+          : map["balance"] as double,    
+      accountType: (map['accountType'] != null) 
+          ? map['accountType'] as String
+          : null,
     );
   }
 

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dart_assincronismo/helpers/helper_taxes.dart';
 import 'package:dart_assincronismo/models/account.dart';
 import 'package:dart_assincronismo/services/account_services.dart';
 
@@ -23,5 +24,6 @@ class Transactionservice {
 
     print(senderAccount);
     print(receiverAccount);
+    print(calculateTaxesByAccount(account: senderAccount, amount: amount));
   }
 }

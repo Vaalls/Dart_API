@@ -4,9 +4,9 @@ import 'package:dart_assincronismo/services/transactionService.dart';
 
 void main(){
   Transactionservice().makeTransation
-  (idSender: "ID2",
+  (idSender: "New01",
   idReceiver: "ID010",
-  amount: 100
+  amount: 5001
   );
   // AccountScreen accountScreen = AccountScreen();
   // accountScreen.initializeStream();

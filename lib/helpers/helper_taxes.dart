@@ -1,15 +1,13 @@
 // lib/helpers/helper_taxes.dart
 
-class Account {
-  String accountType;
+import 'package:dart_assincronismo/models/account.dart';
 
-  Account(this.accountType);
-}
+double calculateTaxesByAccount({
+  required Account account,
+  required double amount
+  }) {
 
-double calculateTaxesByAccount(Account account, double amount) {
-  if (amount < 5000) {
-    return 0;
-  }
+  if (amount < 5000) return 0;
 
   switch (account.accountType) {
     case 'Ambrosia':
@@ -21,6 +19,6 @@ double calculateTaxesByAccount(Account account, double amount) {
     case 'Brigadeiro':
       return amount * 0.0001; // 0.01% para Brigadeiro
     default:
-      return 0; // Caso o tipo de conta não seja reconhecido
+      return 0.1; // Caso o tipo de conta não seja reconhecido
   }
 }
